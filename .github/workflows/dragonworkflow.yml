@@ -1,0 +1,12 @@
+name: Dragon Workflow
+
+on: push
+
+jobs: 
+    ascii_job:
+      runs-on: ubuntu-latest
+      steps:
+        - name : checkout repo
+          uses: actions/checkout@v4
+        - name: install cowsay program
+          run: sudo apt-get install cowsay -y && cowsay -f dragon “Run for cover, I am a DRAGON..RAWR” >> dragon.txt
